@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+data/settings.json
+data/downloaded.txt
+data/*.log
+downloads/*
+!downloads/.gitkeep
+vendor/yt-dlp/
+*.part
+*.ytdl
