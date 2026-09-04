@@ -131,7 +131,6 @@ class MainWindow(QMainWindow):
         layout = QVBoxLayout(tab)
         buttons = QHBoxLayout()
         buttons.addWidget(_button("Load file", self._load_bulk))
-        buttons.addWidget(_button("Load redgifs.md", self._load_redgifs))
         buttons.addWidget(_button("Select all", self._bulk_select_all))
         buttons.addWidget(_button("Select none", self._bulk_select_none))
         buttons.addWidget(_button("Remove selected", self._bulk_remove_selected))
@@ -390,9 +389,6 @@ class MainWindow(QMainWindow):
         if text.startswith("Title: "):
             title = text.splitlines()[0][7:] or title
         self._enqueue(title, url)
-
-    def _load_redgifs(self) -> None:
-        self._load_bulk_path(PROJECT_ROOT / "redgifs.md")
 
     def _load_bulk(self) -> None:
         name, _ = QFileDialog.getOpenFileName(
